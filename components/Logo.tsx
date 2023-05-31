@@ -15,6 +15,6 @@ function Logo(props: any) {
         <>{renderDefault(props)}</>
     </div>
   )
-}
+};
 
-export default Logo
+export default Logo;

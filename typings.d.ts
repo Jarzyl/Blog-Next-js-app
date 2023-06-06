@@ -10,7 +10,7 @@ interface Post extends Base {
     author: Author;
     body: Block[];
     categories: Category[];
-    mainImage: Image;
+    mainImage: image;
     slug: Slug;
     title: string;
     description: string;
@@ -18,7 +18,7 @@ interface Post extends Base {
 
 interface Author extends Base {
     bio: Block[];
-    image: Image;
+    image: image;
     name: string;
     slug: Slug;
 }

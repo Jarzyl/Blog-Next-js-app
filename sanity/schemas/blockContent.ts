@@ -68,8 +68,18 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
-        }
+        },
+        {
+          name: 'width',
+          type: 'number',
+          title: 'Width',
+        },
+        {
+          name: 'height',
+          type: 'number',
+          title: 'Height',
+        },
       ]
     }),
   ],
-})
+});

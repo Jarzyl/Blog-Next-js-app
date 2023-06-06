@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+::-webkit-scrollbar-thumb {
+    background: #86efac;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #22c55e;
+}

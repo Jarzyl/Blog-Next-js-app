@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
-import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
@@ -34,14 +34,14 @@ async function Post({params: {slug}}: Props) {
     ...,
     author->,
     categories[]->
-    }
-    `
-    const post: Post = await client.fetch(query, { slug });
+    }`;
 
-  return (
-    <article className="px-10 pb-28">
-        <section className="space-y-2 border border-green-500 text-white">
-            <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
+    const post: Post = await client.fetch(query, { slug });
+    
+    return (
+        <article className="px-10 pb-28">
+            <section className="space-y-2 border border-green-500 text-white">
+                <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
                 <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
                 <Image 
                         className="object-cover object-center mx-auto"
@@ -55,14 +55,12 @@ async function Post({params: {slug}}: Props) {
                     gap-y-5">
                         <div>
                             <h1 className="text-4xl font-extrabold">{post.title}</h1>
-                            <p>
-                            {new Date(post._createdAt).toLocaleDateString(
+                            <p> {new Date(post._createdAt).toLocaleDateString(
                                     "en-US", {
                                     day: "numeric",
                                     month: "long",
                                     year: "numeric",
-                            })}
-                            </p>
+                            })}</p>
                         </div>
                         <div className="flex items-center space-x-2">
                         <Image 

@@ -39,7 +39,7 @@ export const RichTextComponents = {
           ),
 
           blockquote: ({ children }: any) => (
-            <blockquote className="border-yellow-500 border-l-4 pl-5 py-5 my-5">{children}</blockquote>
+            <blockquote className="border-green-500 border-l-4 pl-5 py-5 my-5">{children}</blockquote>
           ),
         },
         marks: {
@@ -48,7 +48,7 @@ export const RichTextComponents = {
 
             return (
               <Link href={value.href} rel={rel}
-              className="underline text-yellow-500 hover:decoration-black">
+              className="underline text-green-500 hover:decoration-black">
                 {children}
               </Link>
             );

@@ -10,7 +10,7 @@ function StudioNavbar(props: any) {
           Go Back To Website
         </Link>
         <div className='flex justify-center'>
-        <h1 className='font-bold text-green-500 text-3xl'> Welcome in the Sanity Studio!</h1>
+        <h1 className='font-bold text-green-500 text-3xl'>Welcome in the Sanity Studio!</h1>
         </div>
       </div>
       <>{props.renderDefault(props)}</>

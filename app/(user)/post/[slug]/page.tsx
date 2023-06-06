@@ -5,7 +5,6 @@ import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 
-
 type Props = {
     params: {
         slug: string;
@@ -14,7 +13,7 @@ type Props = {
 
 export const revalidate = 60;
 
-export async function generateStatisParam(){
+export async function generateStaticParams(){
     const query = groq`
     *[_type=='post']
     {
@@ -29,7 +28,6 @@ export async function generateStatisParam(){
     }));
 };
 
-
 async function Post({params: {slug}}: Props) {
     const query = groq`
     *[_type=='post' && slug.current == $slug][0] {
@@ -38,9 +36,7 @@ async function Post({params: {slug}}: Props) {
     categories[]->
     }
     `
-
     const post: Post = await client.fetch(query, { slug });
-
 
   return (
     <article className="px-10 pb-28">
@@ -98,7 +94,6 @@ async function Post({params: {slug}}: Props) {
                 </section>
             </div>
         </section>
-
         <PortableText value={post.body} components={RichTextComponents}/>
     </article>
   );
